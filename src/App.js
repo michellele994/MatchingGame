@@ -4,21 +4,25 @@ import Pictures from "./components/Pictures";
 import Scores from "./components/Scores";
 
 
-var loadPictures = function(typeOfPicture, number)
+const loadPictures = function(typeOfPicture, number)
   {
     let array = [];
-    for (var i = 1; i < number+1; i++)
+    for (let i = 1; i < number+1; i++)
     {
-      array.push("./images/"+typeOfPicture+i+".png");
+      let picture = {
+        id: i,
+        image: "./images/"+typeOfPicture+i+".png"
+      }
+      array.push(picture);
     }
     return array;
   }
 //array of 8 cows, 12 pigs, 16 chickens, 20 rabbits, 24 eggs
 const cows = loadPictures("cow", 6);
-const pigs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-const chickens = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
-const rabbits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24];
-const eggs = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
+const pigs = loadPictures("pig", 12);
+const chickens = loadPictures("chicken", 18);
+const rabbits = loadPictures("rabbit", 24);
+const eggs = loadPictures("egg", 30);
 
 class App extends Component {
 
@@ -37,10 +41,10 @@ class App extends Component {
       let currentScore = this.state.overallScore;
       let currentLevelScore = this.state.levelScore;
       //If the clicked picture is not already picked,
-      if (!this.state.chosenArray.includes(event.target.textContent))
+      if (!this.state.chosenArray.includes(event.target.getAttribute("data-id")))
       {
         //Push it to the array that collects all pictures that have already been pressed
-        updateChosenArray.push(event.target.textContent);
+        updateChosenArray.push(event.target.getAttribute("data-id"));
         //Increase the scores
         currentScore++;
         currentLevelScore++;
@@ -61,7 +65,7 @@ class App extends Component {
         {
           console.log("You win!")
           //Update level, change array of pictures
-          var updateLevel = this.state.level+1;
+          let updateLevel = this.state.level+1;
           this.resetGame(updateLevel, currentScore);
         }
       }
@@ -117,7 +121,7 @@ class App extends Component {
   randomizeArray(array)
   {
     //I learned how to shuffle arrays here: https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
-    var j, x, i;
+    let j, x, i;
     for (i = array.length - 1; i > 0; i--)
     {
         j = Math.floor(Math.random() * (i + 1));
@@ -130,7 +134,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className = "container text-center">
         <Header 
         level={this.state.level}
         /> 
