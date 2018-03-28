@@ -71,7 +71,7 @@ class App extends Component {
       }
       else
       {
-          console.log("You already pressed this. You lose!");
+          alert("Oh no! The alien had abducted an animal! Game over! Try again.");
           if(this.state.highScore < currentScore)
           {
             this.setState({
@@ -134,22 +134,26 @@ class App extends Component {
 
   render() {
     return (
-      <div className = "container text-center">
-        <Header 
-        level={this.state.level}
-        /> 
-        {this.state.picturesArray.map(picture => {
-          return(
-            <Pictures 
-            stuff={picture}
-            click={this.handleThisClick}
-            />
-          )
-        })}
-        <Scores 
-        score= {this.state.overallScore}
-        highScore= {this.state.highScore}
-        />
+      <div className="overall-wrap">
+        <div className = "inner-wrap text-center">
+        <div id="alien"><img src="./images/AlienSprite.png" /></div>
+          <Header 
+          level={this.state.level}
+          />
+          <Scores 
+          score= {this.state.overallScore}
+          highScore= {this.state.highScore}
+          /> 
+          {this.state.picturesArray.map(picture => {
+            return(
+              <Pictures 
+              thePics={picture}
+              click={this.handleThisClick}
+              />
+            )
+          })}
+          <div id="grass"></div>
+        </div>
       </div>
     );
   }

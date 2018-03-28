@@ -2,9 +2,10 @@ import React from "react";
 
 const Header = (props) => (
     <div>
-      <h1>Matching Game</h1>
+      <h1>Save Your Farm!</h1>
       <p>
-          Click on an image to earn points, but do not click on an image more than once!
+          Collect all of your animals before the alien abducts them!
+          <br />Once you saved one, don't waste time clicking on it again or else the alien will abduct the others!
       </p>
       Level: {props.level}
     </div>
