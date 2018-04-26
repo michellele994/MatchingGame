@@ -26,7 +26,6 @@ body
 .overall-wrap { 
     position: relative;
     min-height: 100vh;
-    border: 1px solid red;
 }
 .inner-wrap {
     min-height: 100%;
