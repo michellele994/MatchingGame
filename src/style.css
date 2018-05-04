@@ -45,7 +45,7 @@ body
     /* bottom: 0; */
     top: 35%;
 	left: 0;
-	background-image: url("../public/images/grass.png");
+	background-image: url("../images/grass.png");
 	background-color: rgb(34, 177, 76);
 	background-repeat: repeat-x;
     margin-left: calc(-50vw + 50%);
