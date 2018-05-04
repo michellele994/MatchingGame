@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from "./components/Header";
 import Pictures from "./components/Pictures";
 import Scores from "./components/Scores";
+import "./style.css";
 
 
 const loadPictures = function (typeOfPicture, number) {

@@ -1,0 +1,68 @@
+html {
+    overflow-x: hidden;
+    height: 100%;
+}
+body
+{
+    background-color: rgb(3, 3, 111);
+    height: 100%;
+    color: rgb(253, 249, 115)
+}
+#root {
+    height: 100%;
+}
+@keyframes hovering{
+    0%   {left:0px; top:0px;}
+    33%  { left:50%; top:0px;}
+    66% { left:-50%; top:0px;}
+    100% { left:0px; top:0px;}
+}
+#alien {
+    position: relative;
+    animation-name: hovering;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+.overall-wrap { 
+    position: relative;
+    height: 100%;
+}
+.inner-wrap {
+    height: 100%;
+    margin: 100px 200px;
+    padding: 0px;
+}
+.pictureDiv {
+    display: inline-block;
+    margin: 30px 0px;
+}
+.curve-border {
+    border: 1px solid black;
+    border-radius: 30px;
+}
+#grass {
+	position: relative;
+    /* bottom: 0; */
+    top: 35%;
+	left: 0;
+	background-image: url("../images/grass.png");
+	background-color: rgb(34, 177, 76);
+	background-repeat: repeat-x;
+    margin-left: calc(-50vw + 50%);
+    z-index: -1;
+    width: 100vw;
+    height: 10%;
+    padding-bottom: 100px;
+    /* position: absolute;
+	top: 90%;
+	left: 0;
+	background-image: url("../images/grass.png");
+	background-color: rgb(34, 177, 76);
+	background-repeat: repeat-x;
+	margin-left: calc(-50vw + 50%);
+	z-index: -1;
+	width: 100vw;
+	height: 10%;
+    padding-bottom: 15%;
+    border: 1px solid red; */
+}
