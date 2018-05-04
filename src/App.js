@@ -143,7 +143,7 @@ class App extends Component {
               />
             )
           })}
-          <div id="grass"></div>
+          <div id="grass">Copyright &copy; 2018 Michelle Le</div>
         </div>
       </div>
     );
