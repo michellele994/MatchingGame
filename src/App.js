@@ -26,7 +26,7 @@ class App extends Component {
 
   state = {
     level: 1,
-    picturesArray: pigs,
+    picturesArray: cows,
     chosenArray: [],
     levelScore: 0,
     overallScore: 0,
